@@ -50,7 +50,7 @@ bin/problem-81: problem-81.o lib/matrix.o lib/matrix.h
 clean:
 	rm -f *.o
 	rm -f *.hi
-	rm -rf
+	rm -rf bin
 
 bin:
 	mkdir bin

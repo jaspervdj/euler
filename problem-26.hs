@@ -33,7 +33,7 @@ recurring n x = do
             | otherwise -> do
                 modify $ \t -> t
                     {tTick = tick + 1, tSeen = M.insert n tick seen}
-                let (d, m) = n `divMod` x in recurring m x
+                let (_, m) = n `divMod` x in recurring m x
 
 
 --------------------------------------------------------------------------------

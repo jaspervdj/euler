@@ -12,6 +12,7 @@ default: \
 	bin/problem-31 \
 	bin/problem-36 \
 	bin/problem-37 \
+	bin/problem-45 \
 	bin/problem-47 \
 	bin/problem-81 \
 	bin/problem-82 \
@@ -42,6 +43,9 @@ bin/problem-36: problem-36.o
 	gcc -o $@ $<
 
 bin/problem-37: problem-37.hs
+	ghc -o $@ ${GHC_FLAGS} $<
+
+bin/problem-45: problem-45.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
 bin/problem-47: problem-47.hs

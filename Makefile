@@ -16,6 +16,7 @@ default: \
 	bin/problem-45 \
 	bin/problem-47 \
 	bin/problem-48 \
+	bin/problem-50 \
 	bin/problem-81 \
 	bin/problem-82 \
 	bin/problem-83
@@ -58,6 +59,11 @@ bin/problem-47: problem-47.hs
 
 bin/problem-48: problem-48.o
 	gcc -o $@ $<
+
+bin/problem-50: problem-50.o \
+		lib/bit-vector.o lib/bit-vector.h \
+		lib/primes.o lib/primes.h
+	gcc -o $@ problem-50.o lib/bit-vector.o lib/primes.o
 
 bin/problem-81: problem-81.o lib/matrix.o lib/matrix.h
 	gcc -o $@ problem-81.o lib/matrix.o

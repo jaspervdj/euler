@@ -24,4 +24,4 @@ intersection ((x : xs) : lists)
         | otherwise              = (y : ys) : deleteMin z zs ls
 
 main :: IO ()
-main = print $ take 3 $ intersection [triangle, pentagonal, hexagonal]
+main = print $ intersection [triangle, pentagonal, hexagonal] !! 2

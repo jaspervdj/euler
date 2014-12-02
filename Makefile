@@ -14,6 +14,7 @@ default: \
 	bin/problem-37 \
 	bin/problem-44 \
 	bin/problem-45 \
+	bin/problem-46 \
 	bin/problem-47 \
 	bin/problem-48 \
 	bin/problem-49 \
@@ -54,6 +55,11 @@ bin/problem-44: problem-44.hs
 
 bin/problem-45: problem-45.hs
 	ghc -o $@ ${GHC_FLAGS} $<
+
+bin/problem-46: problem-46.o \
+		lib/bit-vector.o lib/bit-vector.h \
+		lib/primes.o lib/primes.h
+	gcc -o $@ problem-46.o lib/bit-vector.o lib/primes.o
 
 bin/problem-47: problem-47.hs
 	ghc -o $@ ${GHC_FLAGS} $<

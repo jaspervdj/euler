@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 #include "bit-vector.h"
-#include "primes.h"
+#include "sieve.h"
 
 int main(int argc, char **argv) {
     const int limit = 1000 * 1000;

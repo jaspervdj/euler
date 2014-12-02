@@ -62,8 +62,8 @@ bin/problem-45: problem-45.hs
 
 bin/problem-46: problem-46.o \
 		lib/bit-vector.o lib/bit-vector.h \
-		lib/primes.o lib/primes.h
-	gcc -o $@ problem-46.o lib/bit-vector.o lib/primes.o
+		lib/sieve.o lib/sieve.h
+	gcc -o $@ problem-46.o lib/bit-vector.o lib/sieve.o
 
 bin/problem-47: problem-47.hs
 	ghc -o $@ ${GHC_FLAGS} $<
@@ -73,13 +73,13 @@ bin/problem-48: problem-48.o
 
 bin/problem-49: problem-49.o \
 		lib/bit-vector.o lib/bit-vector.h \
-		lib/primes.o lib/primes.h
-	gcc -o $@ problem-49.o lib/bit-vector.o lib/primes.o
+		lib/sieve.o lib/sieve.h
+	gcc -o $@ problem-49.o lib/bit-vector.o lib/sieve.o
 
 bin/problem-50: problem-50.o \
 		lib/bit-vector.o lib/bit-vector.h \
-		lib/primes.o lib/primes.h
-	gcc -o $@ problem-50.o lib/bit-vector.o lib/primes.o
+		lib/sieve.o lib/sieve.h
+	gcc -o $@ problem-50.o lib/bit-vector.o lib/sieve.o
 
 bin/problem-81: problem-81.o lib/matrix.o lib/matrix.h
 	gcc -o $@ problem-81.o lib/matrix.o

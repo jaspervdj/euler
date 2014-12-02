@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "primes.h"
+#include "sieve.h"
 #include "math.h"
 
 int next_odd_composite(sieve *s, int n) {

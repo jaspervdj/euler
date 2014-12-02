@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "primes.h"
+#include "sieve.h"
 
 int is_permutation(int x, int y) {
     int i;

@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include "primes.h"
+#include "sieve.h"
 
 void sieve_initialize(sieve *s) {
     int prime, product;

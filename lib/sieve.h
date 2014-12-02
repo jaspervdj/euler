@@ -1,5 +1,5 @@
-#ifndef PRIMES_H
-#define PRIMES_H
+#ifndef SIEVE_H
+#define SIEVE_H
 
 #include "bit-vector.h"
 

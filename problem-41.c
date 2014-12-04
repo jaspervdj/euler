@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 #include "sieve.h"
-#include "pandigital.h"
+#include "digits.h"
 
 int main(int argc, char **argv) {
     const int limit = 1 * 1000 * 1000 * 1000;

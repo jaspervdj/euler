@@ -25,6 +25,7 @@ default: \
 	bin/problem-49 \
 	bin/problem-50 \
 	bin/problem-51 \
+	bin/problem-52 \
 	bin/problem-81 \
 	bin/problem-82 \
 	bin/problem-83
@@ -51,8 +52,8 @@ bin/problem-31: problem-31.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
 bin/problem-32: problem-32.o \
-		lib/pandigital.o lib/pandigital.h
-	gcc -o $@ problem-32.o lib/pandigital.o
+		lib/digits.o lib/digits.h
+	gcc -o $@ problem-32.o lib/digits.o
 
 bin/problem-36: problem-36.o
 	gcc -o $@ $<
@@ -69,8 +70,8 @@ bin/problem-40: problem-40.hs
 bin/problem-41: problem-41.o \
 		lib/bit-vector.o lib/bit-vector.h \
 		lib/sieve.o lib/sieve.h \
-		lib/pandigital.o lib/pandigital.h
-	gcc -o $@ problem-41.o lib/bit-vector.o lib/sieve.o lib/pandigital.o
+		lib/digits.o lib/digits.h
+	gcc -o $@ problem-41.o lib/bit-vector.o lib/sieve.o lib/digits.o
 
 bin/problem-43: problem-43.hs
 	ghc -o $@ ${GHC_FLAGS} $<
@@ -94,8 +95,9 @@ bin/problem-48: problem-48.o
 
 bin/problem-49: problem-49.o \
 		lib/bit-vector.o lib/bit-vector.h \
-		lib/sieve.o lib/sieve.h
-	gcc -o $@ problem-49.o lib/bit-vector.o lib/sieve.o
+		lib/sieve.o lib/sieve.h \
+		lib/digits.o lib/digits.h
+	gcc -o $@ problem-49.o lib/bit-vector.o lib/sieve.o lib/digits.o
 
 bin/problem-50: problem-50.o \
 		lib/bit-vector.o lib/bit-vector.h \
@@ -104,6 +106,10 @@ bin/problem-50: problem-50.o \
 
 bin/problem-51: problem-51.hs
 	ghc -o $@ ${GHC_FLAGS} $<
+
+bin/problem-52: problem-52.o \
+		lib/digits.o lib/digits.h
+	gcc -o $@ problem-52.o lib/digits.o
 
 bin/problem-81: problem-81.o lib/matrix.o lib/matrix.h
 	gcc -o $@ problem-81.o lib/matrix.o

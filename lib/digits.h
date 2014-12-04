@@ -1,5 +1,9 @@
-#ifndef PANDIGITAL_H
-#define PANDIGITAL_H
+#ifndef DIGITS_H
+#define DIGITS_H
+
+int num_digits(unsigned int x);
+
+int is_digit_permutation(int x, int y);
 
 typedef int pandigital_set;
 
@@ -10,7 +14,5 @@ int pandigital_set_subtract(pandigital_set *mask, int n);
 int pandigital_set_empty(pandigital_set *mask);
 int is_pandigital(int x);
 int is_pandigital_3(int x, int y, int z);
-
-int num_digits(unsigned int x);
 
 #endif

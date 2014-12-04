@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "pandigital.h"
+#include "digits.h"
 
 int main(int argc, char **argv) {
     int limit = 10000;

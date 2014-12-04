@@ -48,6 +48,20 @@ int sieve_next_prime(sieve *s, int n) {
     }
 }
 
+int sieve_previous_prime(sieve *s, int n) {
+    n--;
+
+    while(n >= 0 && bit_vector_get(s->bv, n)) {
+        n--;
+    }
+
+    if(n < 0) {
+        return 0;
+    } else {
+        return n;
+    }
+}
+
 int sieve_is_prime(sieve *s, int n) {
     return !bit_vector_get(s->bv, n);
 }

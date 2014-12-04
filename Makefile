@@ -16,6 +16,7 @@ default: \
 	bin/problem-38 \
 	bin/problem-40 \
 	bin/problem-41 \
+	bin/problem-43 \
 	bin/problem-44 \
 	bin/problem-45 \
 	bin/problem-46 \
@@ -69,6 +70,9 @@ bin/problem-41: problem-41.o \
 		lib/sieve.o lib/sieve.h \
 		lib/pandigital.o lib/pandigital.h
 	gcc -o $@ problem-41.o lib/bit-vector.o lib/sieve.o lib/pandigital.o
+
+bin/problem-43: problem-43.hs
+	ghc -o $@ ${GHC_FLAGS} $<
 
 bin/problem-44: problem-44.hs
 	ghc -o $@ ${GHC_FLAGS} $<

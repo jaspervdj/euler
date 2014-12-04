@@ -1,5 +1,5 @@
 GCC_FLAGS=-Wall -Wextra -Wpedantic -ansi -O2 -Ilib
-GHC_FLAGS=-Wall -ilib --make
+GHC_FLAGS=-Wall -O2 -ilib --make
 
 default: \
 	bin \
@@ -24,6 +24,7 @@ default: \
 	bin/problem-48 \
 	bin/problem-49 \
 	bin/problem-50 \
+	bin/problem-51 \
 	bin/problem-81 \
 	bin/problem-82 \
 	bin/problem-83
@@ -100,6 +101,9 @@ bin/problem-50: problem-50.o \
 		lib/bit-vector.o lib/bit-vector.h \
 		lib/sieve.o lib/sieve.h
 	gcc -o $@ problem-50.o lib/bit-vector.o lib/sieve.o
+
+bin/problem-51: problem-51.hs
+	ghc -o $@ ${GHC_FLAGS} $<
 
 bin/problem-81: problem-81.o lib/matrix.o lib/matrix.h
 	gcc -o $@ problem-81.o lib/matrix.o

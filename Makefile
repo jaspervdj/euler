@@ -26,6 +26,7 @@ default: \
 	bin/problem-50 \
 	bin/problem-51 \
 	bin/problem-52 \
+	bin/problem-54 \
 	bin/problem-81 \
 	bin/problem-82 \
 	bin/problem-83
@@ -110,6 +111,9 @@ bin/problem-51: problem-51.hs
 bin/problem-52: problem-52.o \
 		lib/digits.o lib/digits.h
 	gcc -o $@ problem-52.o lib/digits.o
+
+bin/problem-54: problem-54.hs
+	ghc -o $@ ${GHC_FLAGS} $<
 
 bin/problem-81: problem-81.o lib/matrix.o lib/matrix.h
 	gcc -o $@ problem-81.o lib/matrix.o

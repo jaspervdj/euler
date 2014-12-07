@@ -30,6 +30,7 @@ default: \
 	bin/problem-55 \
 	bin/problem-56 \
 	bin/problem-57 \
+	bin/problem-58 \
 	bin/problem-81 \
 	bin/problem-82 \
 	bin/problem-83
@@ -126,6 +127,11 @@ bin/problem-56: problem-56.hs
 
 bin/problem-57: problem-57.hs
 	ghc -o $@ ${GHC_FLAGS} $<
+
+bin/problem-58: problem-58.o \
+		lib/bit-vector.o lib/bit-vector.h \
+		lib/sieve.o lib/sieve.h
+	gcc -o $@ problem-58.o lib/bit-vector.o lib/sieve.o
 
 bin/problem-81: problem-81.o lib/matrix.o lib/matrix.h
 	gcc -o $@ problem-81.o lib/matrix.o

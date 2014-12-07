@@ -2,6 +2,24 @@
 
 #include "sieve.h"
 
+int is_prime(int n) {
+    int x;
+
+    if (n == 1) {
+        return 0;
+    }
+
+    x = 2;
+    while(x * x <= n) {
+        if(n % x == 0) {
+            return 0;
+        }
+        x++;
+    }
+
+    return 1;
+}
+
 void sieve_initialize(sieve *s) {
     int prime, product;
 

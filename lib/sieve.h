@@ -3,6 +3,8 @@
 
 #include "bit-vector.h"
 
+int is_prime(int n);
+
 typedef struct {
     bit_vector *bv;
     int limit;

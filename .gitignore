@@ -2,3 +2,7 @@ bin
 
 *.hi
 *.o
+
+*.cmi
+*.cmo
+*.cmx

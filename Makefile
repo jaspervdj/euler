@@ -32,6 +32,7 @@ default: \
 	bin/problem-57 \
 	bin/problem-58 \
 	bin/problem-63 \
+	bin/problem-76 \
 	bin/problem-81 \
 	bin/problem-82 \
 	bin/problem-83
@@ -136,6 +137,9 @@ bin/problem-58: problem-58.o \
 
 bin/problem-63: problem-63.ml
 	ocamlopt -o $@ nums.cmxa $<
+
+bin/problem-76: problem-76.ml
+	ocamlopt -o $@ $<
 
 bin/problem-81: problem-81.o lib/matrix.o lib/matrix.h
 	gcc -o $@ problem-81.o lib/matrix.o

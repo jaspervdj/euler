@@ -31,6 +31,7 @@ default: \
 	bin/problem-56 \
 	bin/problem-57 \
 	bin/problem-58 \
+	bin/problem-61 \
 	bin/problem-63 \
 	bin/problem-76 \
 	bin/problem-81 \
@@ -134,6 +135,9 @@ bin/problem-58: problem-58.o \
 		lib/bit-vector.o lib/bit-vector.h \
 		lib/sieve.o lib/sieve.h
 	gcc -o $@ problem-58.o lib/bit-vector.o lib/sieve.o
+
+bin/problem-61: problem-61.hs
+	ghc -o $@ ${GHC_FLAGS} $<
 
 bin/problem-63: problem-63.ml
 	ocamlopt -o $@ nums.cmxa $<

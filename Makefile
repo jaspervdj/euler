@@ -35,6 +35,7 @@ default: \
 	bin/problem-61 \
 	bin/problem-62 \
 	bin/problem-63 \
+	bin/problem-64 \
 	bin/problem-76 \
 	bin/problem-81 \
 	bin/problem-82 \
@@ -149,6 +150,9 @@ bin/problem-62: problem-62.ml
 
 bin/problem-63: problem-63.ml
 	ocamlopt -o $@ nums.cmxa $<
+
+bin/problem-64: problem-64.hs
+	ghc -o $@ ${GHC_FLAGS} $<
 
 bin/problem-76: problem-76.ml
 	ocamlopt -o $@ $<

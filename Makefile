@@ -1,5 +1,5 @@
 GCC_FLAGS=-Wall -Wextra -Wpedantic -ansi -O2 -Ilib
-GHC_FLAGS=-Wall -O2 -ilib --make
+GHC_FLAGS=-Wall -O2 -ilib -ihs --make
 
 default: \
 	bin \
@@ -37,6 +37,7 @@ default: \
 	bin/problem-63 \
 	bin/problem-64 \
 	bin/problem-65 \
+	bin/problem-66 \
 	bin/problem-76 \
 	bin/problem-81 \
 	bin/problem-82 \
@@ -157,6 +158,9 @@ bin/problem-64: problem-64.hs
 
 bin/problem-65: problem-65.ml
 	ocamlopt -o $@ nums.cmxa $<
+
+bin/problem-66: problem-66.hs
+	ghc -o $@ ${GHC_FLAGS} $<
 
 bin/problem-76: problem-76.ml
 	ocamlopt -o $@ $<

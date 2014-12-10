@@ -3,180 +3,180 @@ GHC_FLAGS=-Wall -O2 -ilib/hs --make
 
 default: \
 	bin \
-	bin/problem-19 \
-	bin/problem-23 \
-	bin/problem-24 \
-	bin/problem-25 \
-	bin/problem-26 \
-	bin/problem-27 \
-	bin/problem-31 \
-	bin/problem-32 \
-	bin/problem-36 \
-	bin/problem-37 \
-	bin/problem-38 \
-	bin/problem-40 \
-	bin/problem-41 \
-	bin/problem-43 \
-	bin/problem-44 \
-	bin/problem-45 \
-	bin/problem-46 \
-	bin/problem-47 \
-	bin/problem-48 \
-	bin/problem-49 \
-	bin/problem-50 \
-	bin/problem-51 \
-	bin/problem-52 \
-	bin/problem-54 \
-	bin/problem-55 \
-	bin/problem-56 \
-	bin/problem-57 \
-	bin/problem-58 \
-	bin/problem-60 \
-	bin/problem-61 \
-	bin/problem-62 \
-	bin/problem-63 \
-	bin/problem-64 \
-	bin/problem-65 \
-	bin/problem-66 \
-	bin/problem-68 \
-	bin/problem-76 \
-	bin/problem-81 \
-	bin/problem-82 \
-	bin/problem-83
+	bin/problem-019 \
+	bin/problem-023 \
+	bin/problem-024 \
+	bin/problem-025 \
+	bin/problem-026 \
+	bin/problem-027 \
+	bin/problem-031 \
+	bin/problem-032 \
+	bin/problem-036 \
+	bin/problem-037 \
+	bin/problem-038 \
+	bin/problem-040 \
+	bin/problem-041 \
+	bin/problem-043 \
+	bin/problem-044 \
+	bin/problem-045 \
+	bin/problem-046 \
+	bin/problem-047 \
+	bin/problem-048 \
+	bin/problem-049 \
+	bin/problem-050 \
+	bin/problem-051 \
+	bin/problem-052 \
+	bin/problem-054 \
+	bin/problem-055 \
+	bin/problem-056 \
+	bin/problem-057 \
+	bin/problem-058 \
+	bin/problem-060 \
+	bin/problem-061 \
+	bin/problem-062 \
+	bin/problem-063 \
+	bin/problem-064 \
+	bin/problem-065 \
+	bin/problem-066 \
+	bin/problem-068 \
+	bin/problem-076 \
+	bin/problem-081 \
+	bin/problem-082 \
+	bin/problem-083
 
-bin/problem-19: src/problem-19.hs
+bin/problem-019: src/problem-019.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-23: src/problem-23.o
+bin/problem-023: src/problem-023.o
 	gcc -o $@ $<
 
-bin/problem-24: src/problem-24.hs
+bin/problem-024: src/problem-024.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-25: src/problem-25.hs
+bin/problem-025: src/problem-025.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-26: src/problem-26.hs
+bin/problem-026: src/problem-026.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-27: src/problem-27.hs
+bin/problem-027: src/problem-027.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-31: src/problem-31.hs
+bin/problem-031: src/problem-031.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-32: src/problem-32.o \
+bin/problem-032: src/problem-032.o \
 		lib/c/digits.o lib/c/digits.h
-	gcc -o $@ src/problem-32.o lib/c/digits.o
+	gcc -o $@ src/problem-032.o lib/c/digits.o
 
-bin/problem-36: src/problem-36.o
+bin/problem-036: src/problem-036.o
 	gcc -o $@ $<
 
-bin/problem-37: src/problem-37.hs
+bin/problem-037: src/problem-037.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-38: src/problem-38.hs
+bin/problem-038: src/problem-038.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-40: src/problem-40.hs
+bin/problem-040: src/problem-040.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-41: src/problem-41.o \
+bin/problem-041: src/problem-041.o \
 		lib/c/bit-vector.o lib/c/bit-vector.h \
 		lib/c/sieve.o lib/c/sieve.h \
 		lib/c/digits.o lib/c/digits.h
-	gcc -o $@ src/problem-41.o lib/c/bit-vector.o lib/c/sieve.o lib/c/digits.o
+	gcc -o $@ src/problem-041.o lib/c/bit-vector.o lib/c/sieve.o lib/c/digits.o
 
-bin/problem-43: src/problem-43.hs
+bin/problem-043: src/problem-043.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-44: src/problem-44.hs
+bin/problem-044: src/problem-044.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-45: src/problem-45.hs
+bin/problem-045: src/problem-045.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-46: src/problem-46.o \
+bin/problem-046: src/problem-046.o \
 		lib/c/bit-vector.o lib/c/bit-vector.h \
 		lib/c/sieve.o lib/c/sieve.h
-	gcc -o $@ src/problem-46.o lib/c/bit-vector.o lib/c/sieve.o
+	gcc -o $@ src/problem-046.o lib/c/bit-vector.o lib/c/sieve.o
 
-bin/problem-47: src/problem-47.hs
+bin/problem-047: src/problem-047.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-48: src/problem-48.o
+bin/problem-048: src/problem-048.o
 	gcc -o $@ $<
 
-bin/problem-49: src/problem-49.o \
+bin/problem-049: src/problem-049.o \
 		lib/c/bit-vector.o lib/c/bit-vector.h \
 		lib/c/sieve.o lib/c/sieve.h \
 		lib/c/digits.o lib/c/digits.h
-	gcc -o $@ src/problem-49.o lib/c/bit-vector.o lib/c/sieve.o lib/c/digits.o
+	gcc -o $@ src/problem-049.o lib/c/bit-vector.o lib/c/sieve.o lib/c/digits.o
 
-bin/problem-50: src/problem-50.o \
+bin/problem-050: src/problem-050.o \
 		lib/c/bit-vector.o lib/c/bit-vector.h \
 		lib/c/sieve.o lib/c/sieve.h
-	gcc -o $@ src/problem-50.o lib/c/bit-vector.o lib/c/sieve.o
+	gcc -o $@ src/problem-050.o lib/c/bit-vector.o lib/c/sieve.o
 
-bin/problem-51: src/problem-51.hs
+bin/problem-051: src/problem-051.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-52: src/problem-52.o \
+bin/problem-052: src/problem-052.o \
 		lib/c/digits.o lib/c/digits.h
-	gcc -o $@ src/problem-52.o lib/c/digits.o
+	gcc -o $@ src/problem-052.o lib/c/digits.o
 
-bin/problem-54: src/problem-54.hs
+bin/problem-054: src/problem-054.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-55: src/problem-55.hs
+bin/problem-055: src/problem-055.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-56: src/problem-56.hs
+bin/problem-056: src/problem-056.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-57: src/problem-57.hs
+bin/problem-057: src/problem-057.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-58: src/problem-58.o \
+bin/problem-058: src/problem-058.o \
 		lib/c/bit-vector.o lib/c/bit-vector.h \
 		lib/c/sieve.o lib/c/sieve.h
-	gcc -o $@ src/problem-58.o lib/c/bit-vector.o lib/c/sieve.o
+	gcc -o $@ src/problem-058.o lib/c/bit-vector.o lib/c/sieve.o
 
-bin/problem-60: src/problem-60.ml
+bin/problem-060: src/problem-060.ml
 	ocamlopt -o $@ $<
 
-bin/problem-61: src/problem-61.hs
+bin/problem-061: src/problem-061.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-62: src/problem-62.ml
+bin/problem-062: src/problem-062.ml
 	ocamlopt -o $@ nums.cmxa $<
 
-bin/problem-63: src/problem-63.ml
+bin/problem-063: src/problem-063.ml
 	ocamlopt -o $@ nums.cmxa $<
 
-bin/problem-64: src/problem-64.hs
+bin/problem-064: src/problem-064.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-65: src/problem-65.ml
+bin/problem-065: src/problem-065.ml
 	ocamlopt -o $@ nums.cmxa $<
 
-bin/problem-66: src/problem-66.hs
+bin/problem-066: src/problem-066.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-68: src/problem-68.hs
+bin/problem-068: src/problem-068.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-76: src/problem-76.ml
+bin/problem-076: src/problem-076.ml
 	ocamlopt -o $@ $<
 
-bin/problem-81: src/problem-81.o lib/c/matrix.o lib/c/matrix.h
-	gcc -o $@ src/problem-81.o lib/c/matrix.o
+bin/problem-081: src/problem-081.o lib/c/matrix.o lib/c/matrix.h
+	gcc -o $@ src/problem-081.o lib/c/matrix.o
 
-bin/problem-82: src/problem-82.o lib/c/matrix.o lib/c/matrix.h
-	gcc -o $@ src/problem-82.o lib/c/matrix.o
+bin/problem-082: src/problem-082.o lib/c/matrix.o lib/c/matrix.h
+	gcc -o $@ src/problem-082.o lib/c/matrix.o
 
-bin/problem-83: src/problem-83.o lib/c/matrix.o lib/c/matrix.h
-	gcc -o $@ src/problem-83.o lib/c/matrix.o
+bin/problem-083: src/problem-083.o lib/c/matrix.o lib/c/matrix.h
+	gcc -o $@ src/problem-083.o lib/c/matrix.o
 
 %.o: %.c
 	gcc ${GCC_FLAGS} -c -o $@ $<

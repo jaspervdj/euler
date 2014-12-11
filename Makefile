@@ -1,5 +1,6 @@
 GCC_FLAGS=-Wall -Wextra -Wpedantic -ansi -O2 -Ilib/c
 GHC_FLAGS=-Wall -O2 -ilib/hs --make
+OCAMLC_FLAGS=-I lib/ml
 
 default: \
 	bin \
@@ -39,6 +40,7 @@ default: \
 	bin/problem-065 \
 	bin/problem-066 \
 	bin/problem-068 \
+	bin/problem-069 \
 	bin/problem-076 \
 	bin/problem-081 \
 	bin/problem-082 \
@@ -166,6 +168,9 @@ bin/problem-066: src/problem-066.hs
 bin/problem-068: src/problem-068.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
+bin/problem-069: src/problem-069.ml lib/ml/utils.cmx
+	ocamlopt -o $@ ${OCAMLC_FLAGS} nums.cmxa utils.cmx $<
+
 bin/problem-076: src/problem-076.ml
 	ocamlopt -o $@ $<
 
@@ -180,6 +185,9 @@ bin/problem-083: src/problem-083.o lib/c/matrix.o lib/c/matrix.h
 
 %.o: %.c
 	gcc ${GCC_FLAGS} -c -o $@ $<
+
+%.cmx: %.ml
+	ocamlopt -c -o $@ $<
 
 clean:
 	rm -f src/*.o

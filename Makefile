@@ -41,6 +41,7 @@ default: \
 	bin/problem-066 \
 	bin/problem-068 \
 	bin/problem-069 \
+	bin/problem-070 \
 	bin/problem-076 \
 	bin/problem-081 \
 	bin/problem-082 \
@@ -150,11 +151,11 @@ bin/problem-060: src/problem-060.ml
 bin/problem-061: src/problem-061.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
-bin/problem-062: src/problem-062.ml
-	ocamlopt -o $@ nums.cmxa $<
+bin/problem-062: src/problem-062.ml lib/ml/utils.cmx
+	ocamlopt -o $@ ${OCAMLC_FLAGS} nums.cmxa utils.cmx $<
 
-bin/problem-063: src/problem-063.ml
-	ocamlopt -o $@ nums.cmxa $<
+bin/problem-063: src/problem-063.ml lib/ml/utils.cmx
+	ocamlopt -o $@ ${OCAMLC_FLAGS} nums.cmxa utils.cmx $<
 
 bin/problem-064: src/problem-064.hs
 	ghc -o $@ ${GHC_FLAGS} $<
@@ -171,6 +172,9 @@ bin/problem-068: src/problem-068.hs
 bin/problem-069: src/problem-069.ml lib/ml/utils.cmx
 	ocamlopt -o $@ ${OCAMLC_FLAGS} nums.cmxa utils.cmx $<
 
+bin/problem-070: src/problem-070.hs
+	ghc -o $@ ${GHC_FLAGS} $<
+
 bin/problem-076: src/problem-076.ml
 	ocamlopt -o $@ $<
 
@@ -186,8 +190,11 @@ bin/problem-083: src/problem-083.o lib/c/matrix.o lib/c/matrix.h
 %.o: %.c
 	gcc ${GCC_FLAGS} -c -o $@ $<
 
-%.cmx: %.ml
-	ocamlopt -c -o $@ $<
+lib/ml/utils.cmx: lib/ml/utils.ml
+	ocamlopt -c ${OCAMLC_FLAGS} $<
+
+lib/ml/sieve.cmx: lib/ml/sieve.ml lib/ml/utils.cmx
+	ocamlopt -c ${OCAMLC_FLAGS} utils.cmx $<
 
 clean:
 	rm -f src/*.o

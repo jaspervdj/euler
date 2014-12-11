@@ -5,9 +5,6 @@ let rec pick n ls =
     if n > 0 then List.map (fun l -> x :: l) (pick (n - 1) xs) @ pick n xs
     else [[]];;
 
-let odd x =
-  x mod 2 == 1;;
-
 let cardinality_of_set_union cardinality sets =
   let len = List.length sets in
   let rec go acc n =
@@ -15,7 +12,7 @@ let cardinality_of_set_union cardinality sets =
       acc
     else
       let sum = List.fold_left (fun a u -> a + cardinality u) 0 (pick n sets) in
-      let acc' = if odd n then acc + sum else acc - sum in
+      let acc' = if Utils.odd n then acc + sum else acc - sum in
       go acc' (n + 1) in
   go 0 1;;
 

@@ -17,8 +17,6 @@ let find_num_powerful base =
 let sum l =
   List.fold_left (+) 0 l;;
 
-let rec range i j = if i > j then [] else i :: (range (i + 1) j);;
-
-let num_powerful = sum (List.map find_num_powerful (range 1 9)) in
+let num_powerful = sum (List.map find_num_powerful (Utils.range 1 9)) in
 print_int num_powerful;
 print_string "\n";;

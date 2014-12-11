@@ -1,3 +1,13 @@
+let odd x =
+  x mod 2 == 1;;
+
+let even x =
+  x mod 2 == 0;;
+
+let range lower upper =
+  let rec go acc i = if i < lower then acc else go (i :: acc) (i - 1) in
+  go [] upper;;
+
 let prime_factors n =
   let rec go i x =
       if i * i > x then [x]
@@ -29,3 +39,15 @@ let print_list print_element ls =
   print_string "[";
   go ls;
   print_string "]";;
+
+let list_of_string str =
+  let rec go acc i =
+    if i < 0 then acc
+    else go (String.get str i :: acc) (i - 1) in
+  go [] (String.length str - 1);;
+
+let string_of_list l =
+  let bytes = Bytes.create (List.length l) in
+  let go i c = Bytes.set bytes i c; i + 1 in
+  let _ = List.fold_left go 0 l in
+  Bytes.to_string bytes;;

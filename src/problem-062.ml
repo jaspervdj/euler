@@ -5,21 +5,9 @@ module CubicFamily = Set.Make(struct
   let compare x y = Big_int.compare_big_int x y
 end);;
 
-let list_of_string str =
-  let rec go acc i =
-    if i < 0 then acc
-    else go (String.get str i :: acc) (i - 1) in
-  go [] (String.length str - 1);;
-
-let string_of_list l =
-  let bytes = Bytes.create (List.length l) in
-  let go i c = Bytes.set bytes i c; i + 1 in
-  let _ = List.fold_left go 0 l in
-  Bytes.to_string bytes;;
-
 let cubic_family_key c =
-  let l = list_of_string (Big_int.string_of_big_int c) in
-  string_of_list (List.sort compare l);;
+  let l = Utils.list_of_string (Big_int.string_of_big_int c) in
+  Utils.string_of_list (List.sort compare l);;
 
 let insert_cubic c families =
   let key = cubic_family_key c in

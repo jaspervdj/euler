@@ -43,6 +43,7 @@ default: \
 	bin/problem-069 \
 	bin/problem-070 \
 	bin/problem-071 \
+	bin/problem-072 \
 	bin/problem-076 \
 	bin/problem-081 \
 	bin/problem-082 \
@@ -177,6 +178,9 @@ bin/problem-070: src/problem-070.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
 bin/problem-071: src/problem-071.hs
+	ghc -o $@ ${GHC_FLAGS} $<
+
+bin/problem-072: src/problem-072.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
 bin/problem-076: src/problem-076.ml

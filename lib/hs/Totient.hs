@@ -6,8 +6,8 @@ module Totient
 
 
 --------------------------------------------------------------------------------
-import           Data.Ratio (Ratio)
-import           Primes     (isDivBy)
+import           Data.Ratio   (Ratio)
+import           Primes.State (isDivBy)
 
 
 --------------------------------------------------------------------------------

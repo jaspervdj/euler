@@ -2,7 +2,7 @@ import           Control.Monad       (filterM, replicateM)
 import           Control.Monad.State (State, evalState)
 import           Data.Char           (intToDigit)
 import           Data.List           (foldl', intercalate)
-import           Primes
+import           Primes.State
 
 newtype Pattern = Pattern {unPattern :: [Element]}
 

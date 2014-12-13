@@ -1,6 +1,6 @@
 import           Control.Monad.State (evalState)
 import           Data.List           (sort)
-import           Primes
+import           Primes.State
 import           Totient             (phi)
 
 isPermutation :: Int -> Int -> Bool

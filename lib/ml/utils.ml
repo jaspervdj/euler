@@ -45,6 +45,9 @@ let print_list print_element ls =
   go ls;
   print_string "]";;
 
+let print_big_int bi =
+  print_string (Big_int.string_of_big_int bi);;
+
 let list_of_string str =
   let rec go acc i =
     if i < 0 then acc

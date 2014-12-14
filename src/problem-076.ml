@@ -9,5 +9,12 @@ let num_ways_to_make num =
 
   in go num (num - 1);;
 
+for i = 1 to 100 do
+  print_int i;
+  print_string ": ";
+  print_int (num_ways_to_make i);
+  print_string "\n"
+done;
+
 print_int (num_ways_to_make 100);;
 print_string "\n";;

@@ -48,6 +48,7 @@ default: \
 	bin/problem-074 \
 	bin/problem-075 \
 	bin/problem-076 \
+	bin/problem-077 \
 	bin/problem-081 \
 	bin/problem-082 \
 	bin/problem-083
@@ -198,6 +199,9 @@ bin/problem-075: src/problem-075.hs
 bin/problem-076: src/problem-076.ml
 	ocamlopt -o $@ $<
 
+bin/problem-077: src/problem-077.ml lib/ml/utils.cmx lib/ml/sieve.cmx
+	ocamlopt -o $@ ${OCAMLC_FLAGS} utils.cmx sieve.cmx $<
+
 bin/problem-081: src/problem-081.o lib/c/matrix.o lib/c/matrix.h
 	gcc -o $@ src/problem-081.o lib/c/matrix.o
 
@@ -217,6 +221,8 @@ lib/ml/sieve.cmx: lib/ml/sieve.ml lib/ml/utils.cmx
 	ocamlopt -c ${OCAMLC_FLAGS} utils.cmx $<
 
 clean:
+	rm -f lib/ml/*.cmx
+	rm -f lib/ml/*.cmi
 	rm -f src/*.o
 	rm -f src/*.hi
 	rm -f src/*.cmi

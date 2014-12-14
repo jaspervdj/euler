@@ -8,6 +8,11 @@ let range lower upper =
   let rec go acc i = if i < lower then acc else go (i :: acc) (i - 1) in
   go [] upper;;
 
+let rec drop_while p l =
+  match l with
+  | []      -> []
+  | x :: xs -> if p x then drop_while p xs else x :: xs;;
+
 let prime_factors n =
   let rec go i x =
       if i * i > x then [x]

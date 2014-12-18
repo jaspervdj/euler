@@ -54,7 +54,8 @@ default: \
 	bin/problem-080 \
 	bin/problem-081 \
 	bin/problem-082 \
-	bin/problem-083
+	bin/problem-083 \
+	bin/problem-084
 
 bin/problem-019: src/problem-019.hs
 	ghc -o $@ ${GHC_FLAGS} $<
@@ -222,6 +223,9 @@ bin/problem-082: src/problem-082.o lib/c/matrix.o lib/c/matrix.h
 
 bin/problem-083: src/problem-083.o lib/c/matrix.o lib/c/matrix.h
 	gcc -o $@ src/problem-083.o lib/c/matrix.o
+
+bin/problem-084: src/problem-084.ml
+	ocamlopt -o $@ ${OCAMLC_FLAGS} $<
 
 %.o: %.c
 	gcc ${GCC_FLAGS} -c -o $@ $<

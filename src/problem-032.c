@@ -9,6 +9,9 @@ int main(int argc, char **argv) {
     int x, y, z;
     int found_pandigital;
 
+    (void) argc;
+    (void) argv;
+
     for(z = 1; z < limit; z++) {
         found_pandigital = 0;
         for(x = 1; x * x < z && !found_pandigital; x++) {

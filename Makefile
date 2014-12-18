@@ -1,6 +1,12 @@
 GCC_FLAGS=-Wall -Wextra -Wpedantic -ansi -O2 -Ilib/c
 GHC_FLAGS=-Wall -O2 -ilib/hs --make
-OCAMLC_FLAGS=-I lib/ml
+
+# `-w A-4-24`:
+#
+# - Turn on all warnings (A)
+# - Disable warning 4 (fragile pattern matching)
+# - Disable warning 24 (bad module name, since our filenames contain dashes)
+OCAMLC_FLAGS=-I lib/ml -w A-24-4
 
 default: \
 	bin \
@@ -156,7 +162,7 @@ bin/problem-058: src/problem-058.o \
 	gcc -o $@ src/problem-058.o lib/c/bit-vector.o lib/c/sieve.o
 
 bin/problem-060: src/problem-060.ml
-	ocamlopt -o $@ $<
+	ocamlopt -o $@ ${OCAMLC_FLAGS} $<
 
 bin/problem-061: src/problem-061.hs
 	ghc -o $@ ${GHC_FLAGS} $<
@@ -171,7 +177,7 @@ bin/problem-064: src/problem-064.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
 bin/problem-065: src/problem-065.ml
-	ocamlopt -o $@ nums.cmxa $<
+	ocamlopt -o $@ ${OCAMLC_FLAGS} nums.cmxa $<
 
 bin/problem-066: src/problem-066.hs
 	ghc -o $@ ${GHC_FLAGS} $<
@@ -201,7 +207,7 @@ bin/problem-075: src/problem-075.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
 bin/problem-076: src/problem-076.ml
-	ocamlopt -o $@ $<
+	ocamlopt -o $@ ${OCAMLC_FLAGS} $<
 
 bin/problem-077: src/problem-077.ml lib/ml/utils.cmx lib/ml/sieve.cmx
 	ocamlopt -o $@ ${OCAMLC_FLAGS} nums.cmxa utils.cmx sieve.cmx $<

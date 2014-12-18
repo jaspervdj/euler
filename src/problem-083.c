@@ -6,6 +6,9 @@ int main(int argc, char **argv) {
     int x, y, val, current, neighbour, improved;
     matrix *m, *s;
 
+    (void) argc;
+    (void) argv;
+
     m = matrix_create(80, 80);
     s = matrix_create(80, 80);
     matrix_parse(m, argv[1]);

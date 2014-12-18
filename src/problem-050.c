@@ -13,6 +13,9 @@ int main(int argc, char **argv) {
     int max_sum = 2;
     int max_num_primes = 1;
 
+    (void) argc;
+    (void) argv;
+
     while(first < limit && first != 0) {
 
         sum = first;

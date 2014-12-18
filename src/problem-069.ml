@@ -38,7 +38,7 @@ let find_phi found_phi limit =
 
 let max_n_phi_ref = ref (2, Num.num_of_int 2) in
 let found_phi n phi =
-  let (max_n, max_n_phi) = !max_n_phi_ref in
+  let (_, max_n_phi) = !max_n_phi_ref in
   let n_phi = Num.div_num (Num.num_of_int n) (Num.num_of_int phi) in
   if Num.ge_num n_phi max_n_phi then max_n_phi_ref := (n, n_phi)
   else () in

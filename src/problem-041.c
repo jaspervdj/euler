@@ -8,6 +8,9 @@ int main(int argc, char **argv) {
     sieve *s = sieve_create(limit);
     int p;
 
+    (void) argc;
+    (void) argv;
+
     p = sieve_previous_prime(s, limit);
     while(p > 0 && !is_pandigital(p)) {
         p = sieve_previous_prime(s, p);

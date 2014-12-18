@@ -9,6 +9,9 @@ int main(int argc, char **argv) {
     int x, y, z;
     sieve *s;
 
+    (void) argc;
+    (void) argv;
+
     s = sieve_create(limit);
 
     x = sieve_next_prime(s, 1000);

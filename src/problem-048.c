@@ -7,6 +7,9 @@ int main(int argc, char** argv) {
     unsigned long sum;
     unsigned long product;
 
+    (void) argc;
+    (void) argv;
+
     sum = 0;
     for(i = 1; i <= 1000; i++) {
         product = i;

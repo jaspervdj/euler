@@ -45,6 +45,10 @@ int search_goldbach(int limit) {
 
 int main(int argc, char **argv) {
     int composite = search_goldbach(10000);
+
+    (void) argc;
+    (void) argv;
+
     printf("%d\n", composite);
     return 0;
 }

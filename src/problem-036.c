@@ -41,6 +41,10 @@ int is_decimal_palindrome(unsigned int n) {
 int main(int argc, char **argv) {
     unsigned int n;
     unsigned long int s = 0;
+
+    (void) argc;
+    (void) argv;
+
     for (n = 0; n < 1000 * 1000; n++) {
         if (is_binary_palindrome(n) && is_decimal_palindrome(n)) s += n;
     }

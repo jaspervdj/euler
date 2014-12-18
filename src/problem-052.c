@@ -5,6 +5,9 @@
 int main(int argc, char **argv) {
     int n;
 
+    (void) argc;
+    (void) argv;
+
     n = 1;
     while(!is_digit_permutation(n, n * 2) ||
             !is_digit_permutation(n, n * 3) ||

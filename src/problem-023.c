@@ -19,6 +19,9 @@ int main(int argc, char **argv) {
     int x;
     long int s = 0;
 
+    (void) argc;
+    (void) argv;
+
     for (n = 1; n < 28123; n++) {
 
         x = 1;

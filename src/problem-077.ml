@@ -7,7 +7,7 @@ let rec num_ways_to_make num terms =
     else if x == num then 1 + num_ways_to_make num xs
     else num_ways_to_make (num - x) (x :: xs) + num_ways_to_make num xs;;
 
-let rec find_num_ways_to_make limit =
+let find_num_ways_to_make limit =
   let sieve = Sieve.make limit in
   let primes = List.rev (Sieve.list_of_sieve sieve) in
 

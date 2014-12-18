@@ -10,6 +10,9 @@ int main(int argc, char **argv) {
     int base = 1;
     int found = 0;
 
+    (void) argc;
+    (void) argv;
+
     while(!found) {
 
         if(is_prime(base + side - 1)) {

@@ -51,6 +51,7 @@ default: \
 	bin/problem-077 \
 	bin/problem-078 \
 	bin/problem-079 \
+	bin/problem-080 \
 	bin/problem-081 \
 	bin/problem-082 \
 	bin/problem-083
@@ -208,6 +209,9 @@ bin/problem-078: src/problem-078.ml lib/ml/utils.cmx
 	ocamlopt -o $@ ${OCAMLC_FLAGS} nums.cmxa utils.cmx $<
 
 bin/problem-079: src/problem-079.hs
+	ghc -o $@ ${GHC_FLAGS} $<
+
+bin/problem-080: src/problem-080.hs
 	ghc -o $@ ${GHC_FLAGS} $<
 
 bin/problem-081: src/problem-081.o lib/c/matrix.o lib/c/matrix.h

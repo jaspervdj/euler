@@ -31,3 +31,14 @@ unsigned char bit_vector_get(bit_vector *bv, int idx) {
     int byte = idx / 8;
     return bv->bytes[byte] & (1 << (idx - byte * 8));
 }
+
+int bit_vector_popcount(bit_vector *bv) {
+    int num_bytes = (bv->size + 7) / 8;
+    int popcount = 0;
+    int i;
+    for(i = 0; i < num_bytes; i++) {
+        /* TODO (jaspervdj): use something portable here? */
+        popcount += __builtin_popcount(bv->bytes[i]);
+    }
+    return popcount;
+}

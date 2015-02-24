@@ -64,6 +64,7 @@ default: \
 	bin/problem-084 \
 	bin/problem-085 \
 	bin/problem-086 \
+	bin/problem-087
 
 bin/problem-019: src/problem-019.hs
 	ghc -o $@ ${GHC_FLAGS} $<
@@ -240,6 +241,11 @@ bin/problem-085: src/problem-085.hs
 
 bin/problem-086: src/problem-086.o
 	gcc -o $@ $<
+
+bin/problem-087: src/problem-087.o \
+		lib/c/bit-vector.o lib/c/bit-vector.h \
+		lib/c/sieve.o lib/c/sieve.h
+	gcc -o $@ src/problem-087.o lib/c/bit-vector.o lib/c/sieve.o
 
 %.o: %.c
 	gcc ${GCC_FLAGS} -c -o $@ $<

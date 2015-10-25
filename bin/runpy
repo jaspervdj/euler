@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# A small wrapper to execute python scripts.
+
+if [[ $# < 1 ]]; then
+    echo "Usage: $0 <script/problem number>"
+    exit 1
+fi
+
+if [[ "$1" =~ \.py$ ]]; then
+    SCRIPT="$1"
+fi
+
+if [[ "$1" =~ ^[0-9]+$ ]]; then
+    PATTERN="^problem-0*$1\.py$"
+    MATCH=$(ls -1 src | grep "$PATTERN")
+    if [[ -n "$MATCH" ]]; then
+        SCRIPT="src/$MATCH"
+    fi
+fi
+
+if [[ -n "$SCRIPT" ]]; then
+    PYTHONPATH="lib/py":"$PYTHONPATH" exec python3 "$SCRIPT"
+else
+    echo "Script not found."
+    exit 1
+fi

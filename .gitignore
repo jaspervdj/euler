@@ -1,4 +1,4 @@
-bin
+bin/problem-*
 
 *.hi
 *.o
@@ -6,3 +6,5 @@ bin
 *.cmi
 *.cmo
 *.cmx
+
+*.pyc

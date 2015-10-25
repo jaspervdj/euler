@@ -9,7 +9,6 @@ GHC_FLAGS=-Wall -O2 -ilib/hs --make
 OCAMLC_FLAGS=-I lib/ml -w A-24-4
 
 default: \
-	bin \
 	bin/problem-019 \
 	bin/problem-023 \
 	bin/problem-024 \
@@ -264,7 +263,4 @@ clean:
 	rm -f src/*.cmi
 	rm -f src/*.cmo
 	rm -f src/*.cmx
-	rm -rf bin
-
-bin:
-	mkdir bin
+	rm -f bin/problem-*

@@ -13,6 +13,23 @@ def is_divisable_by_any(n, divisors):
             return True
     return False
 
+def proper_divisors(n):
+    yield 1
+    d = 2
+    while d * d <= n:
+        if n % d == 0:
+            yield d
+            if d * d != n:
+                yield n // d
+        d += 1
+
+def divisors(n):
+    if n == 1:
+        yield 1
+    else:
+        for d in proper_divisors(n): yield d
+        yield n
+
 def primes():
     yield 2
     discovered = [2]

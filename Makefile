@@ -9,6 +9,7 @@ GHC_FLAGS=-Wall -O2 -ilib/hs --make
 OCAMLC_FLAGS=-I lib/ml -w A-24-4
 
 default: \
+	bin/problem-014 \
 	bin/problem-019 \
 	bin/problem-023 \
 	bin/problem-024 \
@@ -64,6 +65,9 @@ default: \
 	bin/problem-085 \
 	bin/problem-086 \
 	bin/problem-087
+
+bin/problem-014: src/problem-014.hs
+	ghc -o $@ ${GHC_FLAGS} $<
 
 bin/problem-019: src/problem-019.hs
 	ghc -o $@ ${GHC_FLAGS} $<

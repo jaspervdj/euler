@@ -1,6 +1,5 @@
-import           Control.Applicative ((<$>))
-import           Control.Monad       (forM_, guard, mplus, msum)
-import           Data.List           (sort)
+import           Control.Monad (forM_, guard, mplus, msum)
+import           Data.List     (sort)
 
 selectMax :: Ord a => [a] -> (a, [a])
 selectMax []       = error "selectMax: empty list"

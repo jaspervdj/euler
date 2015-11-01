@@ -1,5 +1,4 @@
 --------------------------------------------------------------------------------
-import           Control.Applicative ((<$>))
 import           Control.Monad       (filterM)
 import           Control.Monad.State (State, evalState)
 

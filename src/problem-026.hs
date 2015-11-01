@@ -1,6 +1,5 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE BangPatterns #-}
-import           Control.Applicative ((<$>))
 import           Control.Monad.State (State, evalState, get, modify)
 import           Data.List           (maximumBy)
 import           Data.Map            (Map)

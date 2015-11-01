@@ -33,6 +33,7 @@ default: \
 	bin/problem-050 \
 	bin/problem-051 \
 	bin/problem-052 \
+	bin/problem-053 \
 	bin/problem-054 \
 	bin/problem-055 \
 	bin/problem-056 \
@@ -64,7 +65,8 @@ default: \
 	bin/problem-084 \
 	bin/problem-085 \
 	bin/problem-086 \
-	bin/problem-087
+	bin/problem-087 \
+	bin/problem-089
 
 bin/problem-014: src/problem-014.hs
 	ghc -o $@ ${GHC_FLAGS} $<
@@ -149,6 +151,9 @@ bin/problem-051: src/problem-051.hs
 bin/problem-052: src/problem-052.o \
 		lib/c/digits.o lib/c/digits.h
 	gcc -o $@ src/problem-052.o lib/c/digits.o
+
+bin/problem-053: src/problem-053.hs
+	ghc -o $@ ${GHC_FLAGS} $<
 
 bin/problem-054: src/problem-054.hs
 	ghc -o $@ ${GHC_FLAGS} $<
@@ -249,6 +254,9 @@ bin/problem-087: src/problem-087.o \
 		lib/c/bit-vector.o lib/c/bit-vector.h \
 		lib/c/sieve.o lib/c/sieve.h
 	gcc -o $@ src/problem-087.o lib/c/bit-vector.o lib/c/sieve.o
+
+bin/problem-089: src/problem-089.hs
+	ghc -o $@ ${GHC_FLAGS} $<
 
 %.o: %.c
 	gcc ${GCC_FLAGS} -c -o $@ $<

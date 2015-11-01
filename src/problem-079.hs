@@ -1,6 +1,5 @@
-import           Control.Applicative ((<$>))
-import           Data.List           (find, foldl')
-import qualified Data.Map            as M
+import           Data.List (find, foldl')
+import qualified Data.Map  as M
 
 type Order a = M.Map a [a]
 

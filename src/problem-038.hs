@@ -1,7 +1,6 @@
-import Data.Vector (Vector)
+import           Data.Maybe  (listToMaybe, maybeToList)
+import           Data.Vector (Vector)
 import qualified Data.Vector as V
-import Data.Maybe (listToMaybe, maybeToList)
-import Control.Applicative ((<$>))
 
 nextPermutation :: Ord a => Vector a -> Maybe (Vector a)
 nextPermutation v = do

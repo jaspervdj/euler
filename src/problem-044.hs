@@ -2,7 +2,6 @@ import           Control.Monad       (forM)
 import           Control.Monad.State (State, evalState, state)
 import           Data.List           (sort)
 import           Data.Maybe          (catMaybes, listToMaybe, maybeToList)
-import           Data.Monoid         (Monoid (..))
 import qualified Data.Set            as S
 
 data Pentagonals = Pentagonals

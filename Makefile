@@ -66,7 +66,10 @@ default: \
 	bin/problem-085 \
 	bin/problem-086 \
 	bin/problem-087 \
-	bin/problem-089
+	bin/problem-089 \
+	bin/problem-090 \
+	bin/problem-091 \
+	bin/problem-092
 
 bin/problem-014: src/problem-014.hs
 	ghc -o $@ ${GHC_FLAGS} $<
@@ -257,6 +260,15 @@ bin/problem-087: src/problem-087.o \
 
 bin/problem-089: src/problem-089.hs
 	ghc -o $@ ${GHC_FLAGS} $<
+
+bin/problem-090: src/problem-090.hs
+	ghc -o $@ ${GHC_FLAGS} $<
+
+bin/problem-091: src/problem-091.o
+	gcc -o $@ $<
+
+bin/problem-092: src/problem-092.o
+	gcc -o $@ $<
 
 %.o: %.c
 	gcc ${GCC_FLAGS} -c -o $@ $<
